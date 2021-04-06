@@ -1,6 +1,8 @@
 # MovieBookingAPI
 
-Python: 3.7
+`Python: 3.6 to 3.7`
+
+Movie booking system with an API and database
 
 ### How to run
 
