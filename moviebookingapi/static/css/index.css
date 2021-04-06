@@ -1,0 +1,4 @@
+/* CSS is used here to make the select box fits the whole text */
+.custom-select {
+    width: fit-content;
+}

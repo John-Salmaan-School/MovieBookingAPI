@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+  <title>Movie Ticket booker</title>
+  <meta charset = "UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<style>
+  .custom-select {
+    width: fit-content;
+  }
+</style>
+</head>
+<body>
+  <div class="container text-center">
+    <h2>
+      Village Cinemas
+    </h2>
+    <div id="alertMessage" class="alert alert-warning d-none" role="alert">
+      <b id="message">Date can't be older than today :)</b>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group row">
+            <label for="nameInput" class="col-2 col-form-label">Name</label>
+            <div class="col-10">
+              <input class="form-control" type="text" id="nameInput">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="showSelect" class="col-2 col-form-label">Select Show</label>
+            <div class="col-1">
+              <select class="custom-select" id="showSelect">
+                <option value="default" selected>Shrek</option>
+                <option>Andwele</option>
+                <option>Lachlan</option>
+                <option>Something here</option>
+                <option>3 Idiots</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="datePick" class="col-2 col-form-label">Date: </label>
+            <div class="col-3">
+              <input class="form-control" type="date" id="datePick" value="">
+            </div>
+          </div>
+          <br>
+          <h6>Tickets</h6>
+          <br>
+          <div class="form-group row">
+            <label for="adultTicketInput" class="col-2 col-form-label">Adult Tickets (@$12)</label>
+            <div class="col-10">
+              <input class="form-control" type="number" id="adultTicketInput" placeholder="1" min="1">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="childTicketInput" class="col-2 col-form-label">Child Tickets (@$8)</label>
+            <div class="col-10">
+              <input class="form-control" type="number" id="childTicketInput" placeholder="0" min="0">
+            </div>
+            <div class="container text-center">
+              <small><i>Blank is also accepted. It is taken as 0</i></small>
+            </div>
+          </div>
+          <br>
+          <h6>Category</h6>
+          <br>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-secondary" id="superButton">
+              <input type="radio" name="options" autocomplete="off" id="super"> Super Tuesday
+            </label>
+            <label class="btn btn-outline-secondary" id="maniteeButton">
+              <input type="radio" name="options" autocomplete="off" id="manitee"> Manitee Discount
+            </label>
+            <label class="btn btn-outline-secondary" id="concessionButton">
+              <input type="radio" name="options" autocomplete="off" id="concession"> Concession Card
+            </label>
+            <label class="btn btn-outline-secondary active" id="noneButton">
+              <input type="radio" name="options" autocomplete="off" id="none" checked> None
+            </label>
+          </div>
+          <br>
+          <br>
+          <div class="form-group row">
+            <label for="invoiceAmount" class="col-2 col-form-label">Invoice Amount</label>
+            <div class="col-10">
+              <input class="form-control" type="text" id="invoiceAmount" placeholder="$0.00" readonly>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="container text-center">
+            <button class="btn btn-success" type="button" id="calculateButton">Calculate</button>
+            <button class="btn btn-outline-danger" type="button" id="clearButton">Clear</button>
+            <button class="btn btn-outline-primary" type="button" id="saveButton">Save</button>
+            <button class="btn btn-outline-secondary" type="button" id="submitButton">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="{{url_for('static', filename='js/FileSaver.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+</html>
