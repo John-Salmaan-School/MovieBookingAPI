@@ -22,3 +22,17 @@ Python: 3.7
     ```
    Else, leave config.py
 9. Run the program: `python app.py`
+
+### Routes
+* /submit:
+
+    POST request to submit a movie booking
+
+* /view/bookings:
+
+    GET request to view all current bookings in database
+    
+* /view/booking/<string:name>:
+
+    GET request to view a booking with a specific name
+    Example: http://localhost:1234/view/booking/George
