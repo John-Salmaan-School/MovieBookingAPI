@@ -21,6 +21,8 @@ var err_messages = {
     "no-name": "No name enterd. Please enter name before saving",
 }
 
+var api_url = window.location.hostname
+
 // From https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
 
 /* 
@@ -211,7 +213,7 @@ $("#submitButton").click(() => {
     Promise.resolve($.ajax({
         "async": true,
         "crossDomain": false,
-        "url": "http://127.0.0.1:1234/submit",
+        "url": "http://" + api_url +":1234/submit",
         "method": "POST",
         "headers": {
           "content-type": "application/json",

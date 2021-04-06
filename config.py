@@ -1,4 +1,4 @@
 debug = False
-host = "127.0.0.1"
+host = "localhost"
 port = 1234
 secret = ""
