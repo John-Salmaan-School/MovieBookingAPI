@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+  <title>Movie Ticket booker</title>
+  <meta charset = "UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<style>
+  .custom-select {
+    width: fit-content;
+  }
+</style>
+</head>
+<body>
+  <div class="container text-center">
+    <h2>
+        Remove Booking
+    </h2>
+    <div id="alertMessage" class="alert alert-warning d-none" role="alert">
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group row">
+            <label for="nameInput" class="col-2 col-form-label">Name</label>
+            <div class="col-10">
+              <input class="form-control" type="text" id="nameInput">
+            </div>
+          </div>
+          <div class="container text-center">
+            <a href="/"><button class="btn btn-outline-primary">Back</button></a>
+            <button class="btn btn-outline-danger" type="button" id="removeButton">Remove booking</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="{{url_for('static', filename='js/remove.js')}}"></script>
+</html>

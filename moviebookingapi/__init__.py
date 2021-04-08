@@ -7,11 +7,15 @@ def init_app():
     def index():
         return render_template("index.html")
 
+    @app.route("/remove")
+    def remove():
+        return render_template("remove.html")
+
     with app.app_context():
-        from .submit import submit
+        from .booking import booking
         from .view import view
 
-        app.register_blueprint(submit)
+        app.register_blueprint(booking)
         app.register_blueprint(view)
 
         return app

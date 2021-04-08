@@ -211,19 +211,32 @@ $("#submitButton").click(() => {
     var childTicket = $("#childTicketInput").val() == "" ? "0" : $("#childTicketInput").val()
 
     Promise.resolve($.ajax({
-        "async": true,
-        "crossDomain": false,
-        "url": "http://" + api_url +":1234/submit",
+        "url": "http://" + api_url +":1234/booking/submit",
         "method": "POST",
         "headers": {
-          "content-type": "application/json",
-          "cache-control": "no-cache",
+          "content-type": "application/json"
         },
-        "processData": false,
         "data":
         "{\"name\": \"" + name + "\", \"show\": \"" + show + "\",\"date\": \"" + date + "\",\"adult_tickets\": \"" + adultTicket + "\",\"child_tickets\": \"" + childTicket + "\",\"discount\": \"" + discount + "\",\"cost\": \"" + cost + "\"}"
     })).then((data) => {
-        console.log(data)
+        if (!data.error) {
+            $("#alertMessage").removeClass("alert-warning")
+            $("#alertMessage").addClass("alert-success")
+            $("#alertMessage").removeClass("d-none")
+            $("#alertMessage").text("Booking added successfuly")
+            setTimeout(() => {
+                $("#alertMessage").removeClass("alert-success")
+                $("#alertMessage").addClass("alert-warning")
+                $("#alertMessage").addClass("d-none")
+            }, 3500)
+        }
+        else {
+            $("#alertMessage").removeClass("d-none")
+            $("#alertMessage").text(data.error)
+            setTimeout(() => {
+                $("#alertMessage").addClass("d-none")
+            }, 3500)
+        }
     })
 
 })

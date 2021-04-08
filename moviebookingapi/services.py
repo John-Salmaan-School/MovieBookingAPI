@@ -12,6 +12,10 @@ class BookingService(object):
         )
 
     @classmethod
+    def remove(cls, name):
+        Booking.get(name=name).delete()
+
+    @classmethod
     def list_bookings(cls):
         bookings_list = []
 

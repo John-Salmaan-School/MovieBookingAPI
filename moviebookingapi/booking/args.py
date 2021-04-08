@@ -9,3 +9,6 @@ submit_args = {
     "discount": fields.Str(required=True),
     "cost": fields.Str(required=True)
 }
+remove_args = {
+    "name": fields.Str(required=True)
+}
