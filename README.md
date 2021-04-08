@@ -26,9 +26,21 @@ Movie booking system with an API and database
 9. Run the program: `python app.py`
 
 ### Routes
-* /submit:
+* / :
+
+    Main page to make booking
+
+* /remove:
+    
+    Page to remove booking by name    
+
+* /booking/submit:
 
     POST request to submit a movie booking
+    
+* /booking/remove:
+
+    POST request to remove a booking by name
 
 * /view/bookings:
 
