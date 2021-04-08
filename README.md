@@ -32,7 +32,11 @@ Movie booking system with an API and database
 
 * /remove:
     
-    Page to remove booking by name    
+    Page to remove booking by name
+    
+* /update:
+
+    Page to update booking by name  
 
 * /booking/submit:
 
@@ -41,6 +45,10 @@ Movie booking system with an API and database
 * /booking/remove:
 
     POST request to remove a booking by name
+    
+* /booking/update:
+
+    POST request to update a booking by name
 
 * /view/bookings:
 

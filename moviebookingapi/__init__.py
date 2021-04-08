@@ -11,6 +11,10 @@ def init_app():
     def remove():
         return render_template("remove.html")
 
+    @app.route("/update")
+    def update():
+        return render_template("update.html")
+
     with app.app_context():
         from .booking import booking
         from .view import view

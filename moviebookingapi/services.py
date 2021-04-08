@@ -16,6 +16,18 @@ class BookingService(object):
         Booking.get(name=name).delete()
 
     @classmethod
+    def update(cls, name, show, date,
+               adult_num, child_num,
+               discount, cost):
+        for booking in Booking.select(lambda x: x.name == name):
+            booking.show = show if booking.show != show else booking.show
+            booking.date = date if booking.date != date else booking.date
+            booking.adult_num = adult_num if booking.adult_num != adult_num else booking.adult_num
+            booking.child_num = child_num if booking.child_num != child_num else booking.child_num
+            booking.discount = discount if booking.discount != discount else booking.discount
+            booking.cost = cost if booking.cost != cost else booking.cost
+
+    @classmethod
     def list_bookings(cls):
         bookings_list = []
 

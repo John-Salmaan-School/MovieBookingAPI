@@ -1,4 +1,4 @@
-from .args import submit_args, remove_args
+from .args import submit_args, remove_args, update_args
 from webargs.flaskparser import use_args
 from ..services import BookingService
 from flask import Blueprint
@@ -37,6 +37,25 @@ def remove(args):
 
     else:
         result["error"] = "Booking does not exists under that name"
+
+    return result
+
+@blueprint.route("/update", methods=["POST"])
+@use_args(update_args, location="json")
+@orm.db_session
+def update(args):
+    result = {"error": None}
+
+    if not len(BookingService.get_booking(args["name"])) == 0:
+        BookingService.update(
+            name=args["name"], show=args["show"],
+            date=args["date"], adult_num=args["adult_tickets"],
+            child_num=args["child_tickets"], discount=args["discount"],
+            cost=args["cost"]
+        )
+
+    else:
+        result["error"] = "Booking does not exist under that name"
 
     return result
 
