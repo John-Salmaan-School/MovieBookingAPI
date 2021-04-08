@@ -41,6 +41,8 @@ $("#nameInput").change(() => {
 })
 
 $("#updateButton").click(() => {
+    calculate()
+
     var name = $("#nameInput").val()
     var show = $("#showSelect option:selected").text()
     var date = $("#datePick").val()
@@ -87,3 +89,39 @@ $("#updateButton").click(() => {
         })
     }
 })
+
+function calculate() {
+    // Defining constant variables
+    var adultPrice = 12
+    var childPrice = 8
+    var defaultDiscount = 0.0
+
+    /*
+    Definition of adult and child ticket count. In these lines, inline boolean functions are used. So
+    if the input is empty, the variable will default to having 0 as the value. Else, it will have the
+    value of the number inputted
+    */
+    var adultTicket = ($("#adultTicketInput").val() == "" ? 0 : parseInt($("#adultTicketInput").val()))
+    var childTicket = ($("#childTicketInput").val() == "" ? 0 : parseInt($("#childTicketInput").val()))
+
+    // Sequence to check which radio button is checked and what discount to apply.
+    if ($("#super").is(":checked")) {
+        defaultDiscount = 0.5
+    }
+    else if ($("#manitee").is(":checked")) {
+        defaultDiscount = 0.2
+    }
+    else if ($("#concession").is(":checked")) {
+        defaultDiscount = 0.3
+    }
+    // By default, the default discount will remain 0.0
+    else {
+        defaultDiscount = defaultDiscount
+    }
+
+    // Here calculations are applied to finally calculate the invoice amount
+    var invoiceAmount = parseFloat(((adultTicket * adultPrice) + (childTicket * childPrice)) * (1 - defaultDiscount)).toFixed(2)
+
+    // Then the invoice amount is set into the input, which is read only
+    $("#invoiceAmount").val(`$${invoiceAmount}`)
+}
