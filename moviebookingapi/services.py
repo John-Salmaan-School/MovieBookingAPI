@@ -1,5 +1,9 @@
+# Holds services that interact with the sqlite database
 from .models import Booking, User
 
+# This service is used to manage bookings, such as creating
+# updating, removing, listing and getting a specific
+# booking.
 class BookingService(object):
     @classmethod
     def create(cls, bid, name, show, date,
@@ -77,7 +81,8 @@ class BookingService(object):
 
         return result
 
-
+# This service is used to manage users, such as creating
+# listing and getting users.
 class UserService(object):
     @classmethod
     def create(cls, name, email, password,

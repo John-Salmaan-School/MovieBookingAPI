@@ -1,7 +1,7 @@
 import bcrypt
 
 
-def hashpwd(password: str) -> str:
+def hashpwd(password):
     """
     :param password: password as a string
     :return: hashed string of the password
@@ -10,7 +10,7 @@ def hashpwd(password: str) -> str:
     return bcrypt.hashpw(str.encode(password), bcrypt.gensalt()).decode()
 
 
-def checkpwd(password, bcrypt_hash) -> bool:
+def checkpwd(password, bcrypt_hash):
     """
     :param password: inputted password of the user
     :param bcrypt_hash: the hashed password of the user's password in the database

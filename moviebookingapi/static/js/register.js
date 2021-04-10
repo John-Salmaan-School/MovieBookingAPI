@@ -68,6 +68,10 @@ $("#registerButton").click(function() {
                     $("#alertMessage").removeClass("alert-success")
                     $("#alertMessage").addClass("alert-warning")
                     $("#alertMessage").addClass("d-none")
+                }, 2000)
+
+                setTimeout(() => {
+                    location.replace("/login")
                 }, 3500)
             }
             else {

@@ -1,3 +1,4 @@
+# Main file that runs the app
 from moviebookingapi import init_app
 import config
 

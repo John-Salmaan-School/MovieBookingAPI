@@ -19,6 +19,10 @@ def init_app():
     def register():
         return render_template("register.html")
 
+    @app.route("/login")
+    def login():
+        return render_template("login.html")
+
     with app.app_context():
         from .booking import booking
         from .view import view

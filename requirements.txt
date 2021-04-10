@@ -3,3 +3,4 @@ webargs==7.0.1
 pony==0.7.14
 bcrypt==3.2.0
 jwt==1.2.0
+base58~=2.1.0
