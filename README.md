@@ -36,7 +36,11 @@ Movie booking system with an API and database
     
 * /update:
 
-    Page to update booking by name  
+    Page to update booking by name 
+
+* /register:
+
+    Page to register new users
 
 * /booking/submit:
 
@@ -50,11 +54,19 @@ Movie booking system with an API and database
 
     POST request to update a booking by name
 
+* /auth/register:
+
+    POST request to register a new user to database
+
 * /view/bookings:
 
     GET request to view all current bookings in database
     
-* /view/booking/<string:name>:
+* /view/users:
+    
+    GET request to view all current users in the database
+    
+* /view/booking/<string:id>:
 
-    GET request to view a booking with a specific name
-    Example: http://localhost:1234/view/booking/George
+    GET request to view a booking with a specific id
+    Example: http://localhost:1234/view/booking/dfa41569-4268-49a0-9ada-335c4747aa2f
