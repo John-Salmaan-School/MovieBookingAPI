@@ -13,7 +13,7 @@ $("#removeButton").click(() => {
         return
     }
 
-    var name = $("#nameInput").val()
+    var id = $("#idInput").val()
     Promise.resolve($.ajax({
         "url": "http://" + api_url + ":1234/booking/remove",
         "dataType": 'json',
@@ -21,7 +21,7 @@ $("#removeButton").click(() => {
         "headers": {
             "content-type": "application/json"
         },
-        "data": "{\"name\": \"" + name + "\"}"
+        "data": "{\"id\": \"" + id + "\"}"
     })).then((data) => {
         if (!data.error) {
             $("#alertMessage").removeClass("alert-warning")

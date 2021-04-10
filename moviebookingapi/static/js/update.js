@@ -1,13 +1,13 @@
 var api_url = window.location.hostname
 var canChange = false
-$("#nameInput").change(() => {
+$("#idInput").change(() => {
     Promise.resolve($.ajax({
-        "url": "http://" + api_url + ":1234/view/booking/" + $("#nameInput").val(),
+        "url": "http://" + api_url + ":1234/view/booking/" + $("#idInput").val(),
         "method": "GET"
     })).then((data) => {
         if (data["data"].length == 0) {
             $("#alertMessage").removeClass("d-none")
-            $("#alertMessage").text("Booking does not exist under that name")
+            $("#alertMessage").text("Booking does not exist under that ID")
             setTimeout(() => {
                 $("#alertMessage").addClass("d-none")
             }, 3500)
@@ -29,11 +29,37 @@ $("#nameInput").change(() => {
             $("#categoryText").removeClass("d-none")
             $("#discountGroups").removeClass("d-none")
 
-            $("#showSelect").val(data["data"][1])
-            $("#datePick").val(data["data"][2])
-            $("#adultTicketInput").val(data["data"][3])
-            $("#childTicketInput").val(data["data"][4])
-            $("#invoiceAmount").val(data["data"][6])
+            $("#nameInput").val(data.data.name)
+            $("#showSelect").val(data.data.show)
+            $("#datePick").val(data.data.date)
+            $("#adultTicketInput").val(data.data.adult)
+            $("#childTicketInput").val(data.data.child)
+            $("#invoiceAmount").val(data.data.cost)
+
+            if (data.data.discount == "None") {
+                $("#superButton").removeClass("active")
+                $("#maniteeButton").removeClass("active")
+                $("#concessionButton").removeClass("active")
+                $("#noneButton").addClass("active")
+            }
+            else if (data.data.discount == "Concession Discount") {
+                $("#superButton").removeClass("active")
+                $("#maniteeButton").removeClass("active")
+                $("#concessionButton").addClass("active")
+                $("#noneButton").removeClass("active")
+            }
+            else if (data.data.discount == "Manitee Discount") {
+                $("#superButton").removeClass("active")
+                $("#maniteeButton").addClass("active")
+                $("#concessionButton").removeClass("active")
+                $("#noneButton").removeClass("active")
+            }
+            else if (data.data.discount == "Super Tuesday") {
+                $("#superButton").addClass("active")
+                $("#maniteeButton").removeClass("active")
+                $("#concessionButton").removeClass("active")
+                $("#noneButton").removeClass("active")
+            }
 
             canChange = true
         }
@@ -87,6 +113,13 @@ $("#updateButton").click(() => {
                 $("#alertMessage").addClass("d-none")
             }, 3500)
         })
+    }
+    else {
+        $("#alertMessage").removeClass("d-none")
+        $("#alertMessage").text("Invalid Booking ID")
+        setTimeout(() => {
+            $("#alertMessage").addClass("d-none")
+        }, 2000)
     }
 })
 

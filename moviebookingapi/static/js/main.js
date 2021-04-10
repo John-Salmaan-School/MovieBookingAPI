@@ -223,7 +223,8 @@ $("#submitButton").click(() => {
             $("#alertMessage").removeClass("alert-warning")
             $("#alertMessage").addClass("alert-success")
             $("#alertMessage").removeClass("d-none")
-            $("#alertMessage").text("Booking added successfuly")
+            $("#alertMessage").text("Booking added successfuly.\nID has been copied")
+            copy_to_clipboard(data.id)
             setTimeout(() => {
                 $("#alertMessage").removeClass("alert-success")
                 $("#alertMessage").addClass("alert-warning")
@@ -265,4 +266,13 @@ function getCurrentDate() {
     return the format needed, yyyy-mm-dd
     */
     return date.join("-")
+}
+
+// From https://www.codegrepper.com/code-examples/html/copy+pre+made+string+to+clipboard+javascript+without+input
+function copy_to_clipboard(text) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(text).select();
+    document.execCommand("copy");
+    $temp.remove();
 }

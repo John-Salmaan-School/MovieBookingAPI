@@ -1,25 +1,25 @@
-from .models import Booking
+from .models import Booking, User
 
 class BookingService(object):
     @classmethod
-    def create(cls, name, show, date,
+    def create(cls, bid, name, show, date,
                adult_num, child_num,
                discount, cost):
-        return Booking(
-            name=name, show=show, date=date,
+        Booking(
+            bid=bid, name=name, show=show, date=date,
             adult_num=adult_num, child_num=child_num,
             discount=discount, cost=cost
         )
 
     @classmethod
-    def remove(cls, name):
-        Booking.get(name=name).delete()
+    def remove(cls, bid):
+        Booking.get(bid=bid).delete()
 
     @classmethod
-    def update(cls, name, show, date,
+    def update(cls, bid, show, date,
                adult_num, child_num,
                discount, cost):
-        for booking in Booking.select(lambda x: x.name == name):
+        for booking in Booking.select(lambda x: x.bid == bid):
             booking.show = show if booking.show != show else booking.show
             booking.date = date if booking.date != date else booking.date
             booking.adult_num = adult_num if booking.adult_num != adult_num else booking.adult_num
@@ -29,49 +29,82 @@ class BookingService(object):
 
     @classmethod
     def list_bookings(cls):
-        bookings_list = []
+        result = {"data": []}
 
         for booking in Booking.select():
-            booking_detail = []
-            name = booking.name
-            show = booking.show
-            date = booking.date
-            adult_num = booking.adult_num
-            child_num = booking.child_num
-            discount = booking.discount
-            cost = booking.cost
+            booking_detail = {
+                "id": booking.bid,
+                "name": booking.name,
+                "show": booking.show,
+                "date": booking.date,
+                "adult": booking.adult_num,
+                "child": booking.child_num,
+                "discount": booking.discount,
+                "cost": booking.cost
+            }
 
-            booking_detail.append(name)
-            booking_detail.append(show)
-            booking_detail.append(date)
-            booking_detail.append(adult_num)
-            booking_detail.append(child_num)
-            booking_detail.append(discount)
-            booking_detail.append(cost)
+            result["data"].append(booking_detail)
 
-            bookings_list.append(booking_detail)
-
-        return bookings_list
+        return result
 
     @classmethod
-    def get_booking(cls, name):
-        booking_list = []
+    def get_booking(cls, bid):
+        result = {"data": {}}
+        for booking in Booking.select(lambda x: x.bid == bid):
+            result["data"]["id"] = booking.bid
+            result["data"]["name"] = booking.name
+            result["data"]["show"] = booking.show
+            result["data"]["date"] = booking.date
+            result["data"]["adult"] = booking.adult_num
+            result["data"]["child"] = booking.child_num
+            result["data"]["discount"] = booking.discount
+            result["data"]["cost"] = booking.cost
+
+        return result
+
+    @classmethod
+    def get_booking_by_name(cls, name):
+        result = {"data": {}}
         for booking in Booking.select(lambda x: x.name == name):
-            book_name = booking.name
-            book_show = booking.show
-            book_date = booking.date
-            book_adult_num = booking.adult_num
-            book_child_num = booking.child_num
-            book_discount = booking.discount
-            book_cost = booking.cost
+            result["data"]["id"] = booking.bid
+            result["data"]["name"] = booking.name
+            result["data"]["show"] = booking.show
+            result["data"]["date"] = booking.date
+            result["data"]["adult"] = booking.adult_num
+            result["data"]["child"] = booking.child_num
+            result["data"]["discount"] = booking.discount
+            result["data"]["cost"] = booking.cost
 
-            booking_list.append(book_name)
-            booking_list.append(book_show)
-            booking_list.append(book_date)
-            booking_list.append(book_adult_num)
-            booking_list.append(book_child_num)
-            booking_list.append(book_discount)
-            booking_list.append(book_cost)
+        return result
 
-        return booking_list
+
+class UserService(object):
+    @classmethod
+    def create(cls, name, email, password,
+               phone_num, admin=False,
+               manager=False):
+        return User(name=name, email=email, password=password,
+                    phone=phone_num, admin=admin,
+                    manager=manager)
+
+    @classmethod
+    def get_by_email(cls, email):
+        return User.get(email=email)
+
+    @classmethod
+    def list_users(cls):
+        result = {"data": []}
+        for user in User.select():
+            user_detail = {
+                "name": user.name,
+                "email": user.email,
+                "phone": user.phone,
+                "admin": user.admin,
+                "manager": user.manager
+            }
+
+            result["data"].append(user_detail)
+
+        return result
+
 

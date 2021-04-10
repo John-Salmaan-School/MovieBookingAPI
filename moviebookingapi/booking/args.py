@@ -10,11 +10,13 @@ submit_args = {
     "cost": fields.Str(required=True)
 }
 remove_args = {
-    "name": fields.Str(required=True)
+    "id": fields.Str(required=True)
 }
 
 update_args = {
-    "name": fields.Str(required=True),
+    "id": fields.Str(required=True),
+    "name": fields.Str(required=False
+                       ),
     "show": fields.Str(required=False),
     "date": fields.Str(required=False),
     "adult_tickets": fields.Str(required=False),

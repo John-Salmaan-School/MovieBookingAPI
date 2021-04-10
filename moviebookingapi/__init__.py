@@ -15,11 +15,17 @@ def init_app():
     def update():
         return render_template("update.html")
 
+    @app.route("/register")
+    def register():
+        return render_template("register.html")
+
     with app.app_context():
         from .booking import booking
         from .view import view
+        from .auth import auth
 
         app.register_blueprint(booking)
         app.register_blueprint(view)
+        app.register_blueprint(auth)
 
         return app
