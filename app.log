@@ -1,0 +1,332 @@
+2021-04-11 17:59:07,551 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-11 18:09:39,209 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-11 18:09:53,152 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 18:09:53] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 18:09:53,670 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 18:09:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 18:09:56,531 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 18:09:56] "[37mGET /view/bookings HTTP/1.1[0m" 200 -
+2021-04-11 18:51:26,570 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-11 18:51:35,761 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 18:51:35] "[37mGET /view/users HTTP/1.1[0m" 200 -
+2021-04-11 18:51:36,313 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 18:51:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 18:51:42,789 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 18:51:42] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 18:51:43,083 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 18:51:43] "[37mGET /static/js/login.js HTTP/1.1[0m" 200 -
+2021-04-11 18:51:53,840 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 18:51:53] "[37mPOST /auth/login HTTP/1.1[0m" 200 -
+2021-04-11 18:56:22,333 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-11 18:56:28,687 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 18:56:28] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 18:56:42,426 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 18:56:42] "[37mPOST /auth/login HTTP/1.1[0m" 200 -
+2021-04-11 19:08:02,304 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-11 19:08:11,016 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:08:11] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:08:11,061 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:08:11] "[37mGET /static/js/login.js HTTP/1.1[0m" 200 -
+2021-04-11 19:08:11,593 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:08:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 19:08:26,516 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:08:26] "[37mPOST /auth/login HTTP/1.1[0m" 200 -
+2021-04-11 19:14:19,056 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-11 19:14:24,325 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:14:24] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:14:24,374 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:14:24] "[37mGET /static/js/login.js HTTP/1.1[0m" 200 -
+2021-04-11 19:14:24,880 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:14:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 19:14:28,970 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:14:28] "[37mPOST /auth/login HTTP/1.1[0m" 200 -
+2021-04-11 19:47:10,076 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:47:10] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:47:10,127 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:47:10] "[37mGET /static/js/login.js HTTP/1.1[0m" 200 -
+2021-04-11 19:47:10,586 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:47:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 19:47:24,301 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:47:24] "[37mPOST /auth/login HTTP/1.1[0m" 200 -
+2021-04-11 19:47:28,849 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:47:28] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:47:29,149 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:47:29] "[37mGET /static/js/login.js HTTP/1.1[0m" 200 -
+2021-04-11 19:47:29,686 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:47:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 19:47:55,334 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:47:55] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 19:52:55,605 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-11 19:53:00,677 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:00] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:53:00,726 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:00] "[37mGET /static/js/login.js HTTP/1.1[0m" 200 -
+2021-04-11 19:53:01,178 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 19:53:16,277 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:16] "[37mPOST /auth/login HTTP/1.1[0m" 200 -
+2021-04-11 19:53:21,838 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:21] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:53:22,137 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:22] "[37mGET /static/js/login.js HTTP/1.1[0m" 200 -
+2021-04-11 19:53:22,653 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:22] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 19:53:23,104 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 19:53:33,048 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:33] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:53:33,528 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:33] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 19:53:47,162 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:53:47] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:56:55,035 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:56:55] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:56:55,097 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:56:55] "[37mGET /static/js/login.js HTTP/1.1[0m" 200 -
+2021-04-11 19:56:55,519 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:56:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 19:56:59,956 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-11 19:57:07,180 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:57:07] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:57:07,230 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:57:07] "[37mGET /static/js/login.js HTTP/1.1[0m" 200 -
+2021-04-11 19:57:07,649 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:57:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 19:57:24,493 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:57:24] "[37mPOST /auth/login HTTP/1.1[0m" 200 -
+2021-04-11 19:57:43,302 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:57:43] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 19:57:43,605 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:57:43] "[37mGET /static/js/login.js HTTP/1.1[0m" 200 -
+2021-04-11 19:57:44,394 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:57:44] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 19:57:45,532 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:57:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 19:57:50,049 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:57:50] "[37mGET /register HTTP/1.1[0m" 200 -
+2021-04-11 19:58:05,193 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:58:05] "[37mGET /register HTTP/1.1[0m" 200 -
+2021-04-11 19:58:05,494 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:58:05] "[37mGET /static/js/register.js HTTP/1.1[0m" 200 -
+2021-04-11 19:58:05,850 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:58:05] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 19:58:06,411 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:58:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 19:58:12,195 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:58:12] "[37mGET /register HTTP/1.1[0m" 200 -
+2021-04-11 19:58:12,744 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 19:58:12] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 20:26:01,947 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-11 20:26:16,888 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:26:16] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 20:26:16,947 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:26:16] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+2021-04-11 20:26:17,140 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:26:17] "[37mGET /static/js/FileSaver.min.js HTTP/1.1[0m" 200 -
+2021-04-11 20:26:17,262 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:26:17] "[37mGET /static/js/main.js HTTP/1.1[0m" 200 -
+2021-04-11 20:26:17,640 - moviebookingapi - ERROR - Exception on /profile/info [GET]
+Traceback (most recent call last):
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\MovieBookingAPI\moviebookingapi\profile\views.py", line 17, in info
+    result["error"] = user[1]
+TypeError: 'bool' object is not subscriptable
+2021-04-11 20:26:17,642 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:26:17] "[35m[1mGET /profile/info HTTP/1.1[0m" 500 -
+2021-04-11 20:26:17,816 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:26:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 20:26:25,870 - moviebookingapi - ERROR - Exception on /profile/info [GET]
+Traceback (most recent call last):
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\MovieBookingAPI\moviebookingapi\profile\views.py", line 17, in info
+    result["error"] = user[1]
+TypeError: 'bool' object is not subscriptable
+2021-04-11 20:26:25,871 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:26:25] "[35m[1mGET /profile/info HTTP/1.1[0m" 500 -
+2021-04-11 20:27:39,633 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-11 20:27:42,204 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:27:42] "[37mGET /profile/info HTTP/1.1[0m" 200 -
+2021-04-11 20:27:42,684 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:27:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 20:27:55,096 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:27:55] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 20:28:09,204 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:28:09] "[37mPOST /auth/login HTTP/1.1[0m" 200 -
+2021-04-11 20:28:17,446 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:28:17] "[37mGET /profile/info HTTP/1.1[0m" 200 -
+2021-04-11 20:28:19,814 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:28:19] "[37mGET /profile/info HTTP/1.1[0m" 200 -
+2021-04-11 20:28:20,243 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:28:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 20:29:24,724 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:29:24] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 20:29:25,253 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:29:25] "[37mGET /profile/info HTTP/1.1[0m" 200 -
+2021-04-11 20:30:12,355 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:30:12] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 20:30:12,658 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:30:12] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+2021-04-11 20:30:12,736 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:30:12] "[37mGET /static/js/FileSaver.min.js HTTP/1.1[0m" 200 -
+2021-04-11 20:30:12,737 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:30:12] "[37mGET /static/js/main.js HTTP/1.1[0m" 200 -
+2021-04-11 20:30:13,257 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:30:13] "[37mGET /profile/info HTTP/1.1[0m" 200 -
+2021-04-11 20:30:13,288 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:30:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 20:30:20,911 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:30:20] "[37mGET /register HTTP/1.1[0m" 200 -
+2021-04-11 20:30:52,786 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:30:52] "[37mPOST /auth/register HTTP/1.1[0m" 200 -
+2021-04-11 20:30:56,610 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:30:56] "[37mGET /login HTTP/1.1[0m" 200 -
+2021-04-11 20:32:43,673 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:32:43] "[37mPOST /auth/login HTTP/1.1[0m" 200 -
+2021-04-11 20:32:54,167 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:32:54] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 20:32:54,690 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:32:54] "[37mGET /profile/info HTTP/1.1[0m" 200 -
+2021-04-11 20:35:57,812 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:35:57] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 20:35:57,872 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:35:57] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+2021-04-11 20:35:58,084 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:35:58] "[37mGET /static/js/FileSaver.min.js HTTP/1.1[0m" 200 -
+2021-04-11 20:35:58,189 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:35:58] "[37mGET /static/js/main.js HTTP/1.1[0m" 200 -
+2021-04-11 20:35:58,603 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:35:58] "[37mGET /profile/info HTTP/1.1[0m" 200 -
+2021-04-11 20:35:58,775 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:35:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 20:36:48,050 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:36:48] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 20:36:48,355 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:36:48] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+2021-04-11 20:36:48,421 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:36:48] "[37mGET /static/js/FileSaver.min.js HTTP/1.1[0m" 200 -
+2021-04-11 20:36:48,421 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:36:48] "[37mGET /static/js/main.js HTTP/1.1[0m" 200 -
+2021-04-11 20:36:48,968 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:36:48] "[37mGET /profile/info HTTP/1.1[0m" 200 -
+2021-04-11 20:36:48,984 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:36:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-11 20:37:03,417 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:37:03] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-11 20:37:03,723 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:37:03] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+2021-04-11 20:37:03,783 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:37:03] "[37mGET /static/js/FileSaver.min.js HTTP/1.1[0m" 200 -
+2021-04-11 20:37:03,784 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:37:03] "[37mGET /static/js/main.js HTTP/1.1[0m" 200 -
+2021-04-11 20:37:04,307 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:37:04] "[37mGET /profile/info HTTP/1.1[0m" 200 -
+2021-04-11 20:37:04,340 - werkzeug - INFO - 127.0.0.1 - - [11/Apr/2021 20:37:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 22:38:51,576 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 22:40:10,263 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 22:40:14,239 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:40:14] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:40:14,302 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:40:14] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 22:40:14,755 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:40:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 22:50:40,025 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 22:50:51,250 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:50:51] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:51:01,837 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:51:01] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:51:38,960 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:51:38] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:51:51,889 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:51:51] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:52:01,068 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:52:01] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:52:03,536 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:52:03] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:52:04,664 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:52:04] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:52:37,542 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:52:37] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:54:05,608 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 22:54:11,524 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:54:11] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:54:21,627 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:54:21] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:54:29,693 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 22:54:31,260 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:54:31] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:54:32,569 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:54:32] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:54:32,614 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:54:32] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 22:54:33,272 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:54:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 22:54:56,671 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:54:56] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:55:07,757 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:55:07] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:56:06,311 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 22:56:10,795 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:56:10] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:56:10,848 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:56:10] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 22:56:11,345 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:56:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 22:56:23,560 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:56:23] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:56:26,440 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:56:26] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 22:56:42,539 - moviebookingapi - ERROR - Exception on /upload [POST]
+Traceback (most recent call last):
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\MovieBookingAPI\moviebookingapi\__init__.py", line 53, in upload
+    file.save(path)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\werkzeug\datastructures.py", line 3066, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'static\\img\\pitbull_logo.png'
+2021-04-12 22:56:42,584 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 22:56:42] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+2021-04-12 23:01:02,317 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:01:07,021 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:01:07] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:01:07,064 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:01:07] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 23:01:07,912 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:01:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:01:16,753 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:01:16] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:02:15,052 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:02:28,582 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:02:31,660 - moviebookingapi - ERROR - Exception on /upload [POST]
+Traceback (most recent call last):
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\MovieBookingAPI\moviebookingapi\__init__.py", line 52, in upload
+    file.save(path)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\werkzeug\datastructures.py", line 3066, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: '\\static\\img\\pitbull_logo.png'
+2021-04-12 23:02:31,663 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:02:31] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+2021-04-12 23:02:32,123 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:02:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:02:40,652 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:02:40] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:02:42,159 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:02:42] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:02:42,462 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:02:42] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 23:02:43,074 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:02:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:02:58,067 - moviebookingapi - ERROR - Exception on /upload [POST]
+Traceback (most recent call last):
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\MovieBookingAPI\moviebookingapi\__init__.py", line 52, in upload
+    file.save(path)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\werkzeug\datastructures.py", line 3066, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: '\\static\\img\\pitbull_logo.png'
+2021-04-12 23:02:58,069 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:02:58] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+2021-04-12 23:08:38,344 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:08:46,031 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:08:46] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:08:46,081 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:08:46] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 23:08:46,739 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:08:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:08:53,143 - moviebookingapi - ERROR - Exception on /upload [POST]
+Traceback (most recent call last):
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "E:\MovieBookingAPI\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\MovieBookingAPI\moviebookingapi\__init__.py", line 54, in upload
+    file.save(path)
+  File "E:\MovieBookingAPI\venv\lib\site-packages\werkzeug\datastructures.py", line 3066, in save
+    dst = open(dst, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\MovieBookingAPI\\static\\img\\pitbull_logo.png'
+2021-04-12 23:08:53,146 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:08:53] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+2021-04-12 23:12:01,202 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:12:43,005 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:13:01,882 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:15:42,658 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:16:38,419 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:16:54,913 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:17:02,384 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:17:02] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:17:02,432 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:17:02] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 23:17:03,123 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:17:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:17:09,211 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:17:09] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:20:08,313 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:20:19,992 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:20:19] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:20:22,751 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:20:22] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:20:22,793 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:20:22] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 23:20:23,349 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:20:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:20:32,268 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:20:32] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:20:47,516 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:20:54,261 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:20:54] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:20:55,552 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:20:55] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:20:55,601 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:20:55] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 23:20:56,183 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:20:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:21:04,984 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:21:04] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:22:20,355 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:22:28,701 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:22:28] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:22:29,984 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:22:29] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:22:30,078 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:22:30] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 23:22:30,619 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:22:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:22:37,033 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:22:37] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:23:00,781 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:23:06,123 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:23:06] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:23:08,829 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:23:19,058 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:23:19] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:23:29,635 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:23:29] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:24:21,635 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:24:49,562 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:24:52,996 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:24:52] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:24:53,045 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:24:53] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 23:24:53,509 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:24:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:25:12,518 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:25:12] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:26:19,935 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:26:21,093 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:26:21] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:26:22,472 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:26:22] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:26:22,513 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:26:22] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 23:26:23,044 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:26:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:26:37,037 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:26:37] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:27:05,494 - werkzeug - INFO -  * Running on http://localhost:1234/ (Press CTRL+C to quit)
+2021-04-12 23:27:07,101 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:07] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:27:08,435 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:08] "[37mGET /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:27:08,504 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:08] "[37mGET /static/js/upload.js HTTP/1.1[0m" 200 -
+2021-04-12 23:27:09,045 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-04-12 23:27:21,982 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:21] "[37mPOST /upload HTTP/1.1[0m" 200 -
+2021-04-12 23:27:42,063 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:42] "[37mGET / HTTP/1.1[0m" 200 -
+2021-04-12 23:27:42,363 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:42] "[37mGET /static/css/index.css HTTP/1.1[0m" 200 -
+2021-04-12 23:27:42,428 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:42] "[37mGET /static/js/FileSaver.min.js HTTP/1.1[0m" 200 -
+2021-04-12 23:27:42,439 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:42] "[37mGET /static/js/main.js HTTP/1.1[0m" 200 -
+2021-04-12 23:27:42,800 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:42] "[37mGET /profile/info HTTP/1.1[0m" 200 -
+2021-04-12 23:27:53,913 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:27:53] "[37mPOST /booking/submit HTTP/1.1[0m" 200 -
+2021-04-12 23:28:02,226 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:28:02] "[37mGET /view/bookings HTTP/1.1[0m" 200 -
+2021-04-12 23:28:02,294 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:28:02] "[37mGET /static/css/bookings.css HTTP/1.1[0m" 200 -
+2021-04-12 23:28:02,470 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:28:02] "[37mGET /static/img/Shrek.png HTTP/1.1[0m" 200 -
+2021-04-12 23:28:02,751 - werkzeug - INFO - 127.0.0.1 - - [12/Apr/2021 23:28:02] "[37mGET /static/img/Andwele.png HTTP/1.1[0m" 200 -

@@ -2,10 +2,10 @@ var api_url = window.location.hostname
 var canChange = false
 $("#idInput").change(() => {
     Promise.resolve($.ajax({
-        "url": "http://" + api_url + ":1234/view/booking/" + $("#idInput").val(),
+        "url": "http://" + api_url + ":1234/booking/get/" + $("#idInput").val(),
         "method": "GET"
     })).then((data) => {
-        if (data["data"].length == 0) {
+        if (data.data.length == 0) {
             $("#alertMessage").removeClass("d-none")
             $("#alertMessage").text("Booking does not exist under that ID")
             setTimeout(() => {
@@ -69,6 +69,7 @@ $("#idInput").change(() => {
 $("#updateButton").click(() => {
     calculate()
 
+    var id = $("#idInput").val()
     var name = $("#nameInput").val()
     var show = $("#showSelect option:selected").text()
     var date = $("#datePick").val()
@@ -101,7 +102,7 @@ $("#updateButton").click(() => {
                 "content-type": "application/json"
             },
             "data":
-            "{\"name\": \"" + name + "\", \"show\": \"" + show + "\",\"date\": \"" + date + "\",\"adult_tickets\": \"" + adultTicket + "\",\"child_tickets\": \"" + childTicket + "\",\"discount\": \"" + discount + "\",\"cost\": \"" + cost + "\"}"
+            "{\"id\": \"" + id + "\", \"name\": \"" + name + "\", \"show\": \"" + show + "\",\"date\": \"" + date + "\",\"adult_tickets\": \"" + adultTicket + "\",\"child_tickets\": \"" + childTicket + "\",\"discount\": \"" + discount + "\",\"cost\": \"" + cost + "\"}"
         })).then((data) => {
             $("#alertMessage").removeClass("alert-warning")
             $("#alertMessage").addClass("alert-success")

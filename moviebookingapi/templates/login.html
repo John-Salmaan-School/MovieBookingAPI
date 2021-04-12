@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        #registerText {
+            float: left;
+        }
+
+        #forgotPassText {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="alertMessage" class="alert alert-warning d-none" role="alert">
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="emailInput">Email: </label>
+                <input class="form-control" id="emailInput" type="email" aria-describedby="emailHelp" placeholder="Email (something@something.com)">
+            </div>
+            <div class="form-group">
+                <label for="passwordInput">Password </label>
+                <input class="form-control" id="passwordInput" type="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" id="loginButton" type="button" style="width: 100%;">Login</button>
+                <div class="container" style="width: 100%">
+                    <small id="registerText"><a href="/register">No account? Register</a></small>
+                    <small id="forgotPassText"><a href="reset.html">Forgot Password?</a></small>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="{{url_for('static', filename='js/login.js')}}"></script>
+</html>

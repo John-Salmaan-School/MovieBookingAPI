@@ -13,7 +13,7 @@ blueprint = Blueprint("booking", __name__, url_prefix="/booking/")
 def submit(args):
     result = {"id": "", "error": None}
 
-    if len(BookingService.get_booking_by_name(args["name"])["data"]) == 0:
+    if not BookingService.get_booking_by_name(args["name"]):
 
         bid = gen_booking_id()
         BookingService.create(
@@ -36,7 +36,7 @@ def submit(args):
 def remove(args):
     result = {"error": None}
 
-    if not len(BookingService.get_booking(args["id"])) == 0:
+    if BookingService.get_booking(args["id"]):
         BookingService.remove(bid=args["id"])
 
     else:
@@ -50,7 +50,7 @@ def remove(args):
 def update(args):
     result = {"error": None}
 
-    if not len(BookingService.get_booking(args["id"])) == 0:
+    if BookingService.get_booking(args["id"]):
         BookingService.update(
             bid=args["id"], show=args["show"], date=args["date"],
             adult_num=args["adult_tickets"], child_num=args["child_tickets"],
@@ -59,6 +59,46 @@ def update(args):
 
     else:
         result["error"] = "Booking does not exist under that ID"
+
+    return result
+
+@blueprint.route("/list", methods=["GET"])
+@orm.db_session
+def list():
+    result = {"data": []}
+
+    for booking in BookingService.list_bookings():
+        booking_detail = {
+            "id": booking.bid,
+            "name": booking.name,
+            "show": booking.show,
+            "date": booking.date,
+            "adult": booking.adult_num,
+            "child": booking.child_num,
+            "discount": booking.discount,
+            "cost": booking.cost
+        }
+
+        result["data"].append(booking_detail)
+
+    return result
+
+@blueprint.route("/get/<string:bid>", methods=["GET"])
+@orm.db_session
+def get(bid):
+    result = {"data": {}}
+
+    booking = BookingService.get_booking(bid)
+    result["data"] = {
+        "id": booking.bid,
+        "name": booking.name,
+        "show": booking.show,
+        "date": booking.date,
+        "adult": booking.adult_num,
+        "child": booking.child_num,
+        "discount": booking.discount,
+        "cost": booking.cost
+    }
 
     return result
 

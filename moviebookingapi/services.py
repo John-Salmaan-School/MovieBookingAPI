@@ -33,53 +33,15 @@ class BookingService(object):
 
     @classmethod
     def list_bookings(cls):
-        result = {"data": []}
-
-        for booking in Booking.select():
-            booking_detail = {
-                "id": booking.bid,
-                "name": booking.name,
-                "show": booking.show,
-                "date": booking.date,
-                "adult": booking.adult_num,
-                "child": booking.child_num,
-                "discount": booking.discount,
-                "cost": booking.cost
-            }
-
-            result["data"].append(booking_detail)
-
-        return result
+        return Booking.select()
 
     @classmethod
     def get_booking(cls, bid):
-        result = {"data": {}}
-        for booking in Booking.select(lambda x: x.bid == bid):
-            result["data"]["id"] = booking.bid
-            result["data"]["name"] = booking.name
-            result["data"]["show"] = booking.show
-            result["data"]["date"] = booking.date
-            result["data"]["adult"] = booking.adult_num
-            result["data"]["child"] = booking.child_num
-            result["data"]["discount"] = booking.discount
-            result["data"]["cost"] = booking.cost
-
-        return result
+        return Booking.get(bid=bid)
 
     @classmethod
     def get_booking_by_name(cls, name):
-        result = {"data": {}}
-        for booking in Booking.select(lambda x: x.name == name):
-            result["data"]["id"] = booking.bid
-            result["data"]["name"] = booking.name
-            result["data"]["show"] = booking.show
-            result["data"]["date"] = booking.date
-            result["data"]["adult"] = booking.adult_num
-            result["data"]["child"] = booking.child_num
-            result["data"]["discount"] = booking.discount
-            result["data"]["cost"] = booking.cost
-
-        return result
+        return Booking.get(name=name)
 
 # This service is used to manage users, such as creating
 # listing and getting users.

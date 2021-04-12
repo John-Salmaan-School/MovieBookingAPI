@@ -4,6 +4,7 @@ Purpose: A website written to immitate the original Movie Ticket Booker which is
 Programmer: Salmaan Nagoormira 
 */
 
+var api_url = window.location.hostname
 // When the website is loading, a function is called
 window.onload = function() {
 
@@ -13,6 +14,16 @@ window.onload = function() {
   
     // Then the date is set into the date picker input
     $("#datePick").val(date)
+
+    Promise.resolve($.ajax({
+        "url": "http://" + api_url + ":1234/profile/info",
+        "headers": {
+            "Authentication": getCookie("auth"),
+        },
+        "method": "GET"
+    })).then((data) => {
+        console.log(data)
+    })
 }
 
 // A variable defined for error messages
@@ -20,8 +31,6 @@ var err_messages = {
     "invalid-date": "Date can't be older than today :)",
     "no-name": "No name enterd. Please enter name before saving",
 }
-
-var api_url = window.location.hostname
 
 // From https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
 
@@ -275,4 +284,20 @@ function copy_to_clipboard(text) {
     $temp.val(text).select();
     document.execCommand("copy");
     $temp.remove();
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
