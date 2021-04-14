@@ -24,38 +24,43 @@ $("#registerButton").click(function() {
 
     if (email == "" && password == "" && confEmail == "" && username == "") {
         $("#alertMessage").removeClass("d-none")
-        $("#message").text(error_messages["no-input"])
+        $("#alertMessage").text(error_messages["no-input"])
         setTimeout(() => {
             $("#alertMessage").addClass("d-none")
         }, 3500)
+        return
     }
     else if (!validateEmail(email) || !validateEmail(confEmail)) {
         $("#alertMessage").removeClass("d-none")
-        $("#message").text(error_messages["invalid-email"])
+        $("#alertMessage").text(error_messages["invalid-email"])
         setTimeout(() => {
             $("#alertMessage").addClass("d-none")
         }, 3500)
+        return
     }
     else if (email != confEmail) {
         $("#alertMessage").removeClass("d-none")
-        $("#message").text(error_messages["email-no-match"])
+        $("#alertMessage").text(error_messages["email-no-match"])
         setTimeout(() => {
             $("#alertMessage").addClass("d-none")
         }, 3500)
+        return
     }
     else if (String(password).length < 8 || String(confPassword).length < 8) {
         $("#alertMessage").removeClass("d-none")
-        $("#message").text(error_messages["short-password"])
+        $("#alertMessage").text(error_messages["short-password"])
         setTimeout(() => {
             $("#alertMessage").addClass("d-none")
         }, 3500)
+        return
     }
     else if (password != confPassword) {
         $("#alertMessage").removeClass("d-none")
-        $("#message").text(error_messages["password-no-match"])
+        $("#alertMessage").text(error_messages["password-no-match"])
         setTimeout(() => {
             $("#alertMessage").addClass("d-none")
         }, 3500)
+        return
     }
     else {
         Promise.resolve($.ajax({

@@ -48,7 +48,8 @@ $("#removeButton").click(() => {
         "dataType": 'json',
         "method": "POST",
         "headers": {
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "Authentication": getCookie("auth")
         },
         "data": "{\"id\": \"" + id + "\"}"
     })).then((data) => {

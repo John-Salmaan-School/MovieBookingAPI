@@ -18,24 +18,27 @@ $("#loginButton").click(() => {
 
     if (email == "" && password == "") {
         $("#alertMessage").removeClass("d-none")
-        $("#message").text(error_messages["no-input"])
+        $("#alertMessage").text(error_messages["no-input"])
         setTimeout(() => {
             $("#alertMessage").addClass("d-none")
         }, 3500)
+        return
     }
     else if (!validateEmail(email)) {
         $("#alertMessage").removeClass("d-none")
-        $("#message").text(error_messages["invalid-email"])
+        $("#alertMessage").text(error_messages["invalid-email"])
         setTimeout(() => {
             $("#alertMessage").addClass("d-none")
         }, 3500)
+        return
     }
     else if (String(password).length < 8) {
         $("#alertMessage").removeClass("d-none")
-        $("#message").text(error_messages["short-password"])
+        $("#alertMessage").text(error_messages["short-password"])
         setTimeout(() => {
             $("#alertMessage").addClass("d-none")
         }, 3500)
+        return
     }
     else {
         Promise.resolve($.ajax({
@@ -47,7 +50,6 @@ $("#loginButton").click(() => {
             "data": "{\"email\": \"" + email + "\", \"password\": \"" + password + "\"}"
         })).then(function(data) {
             if (!data.error) {
-                console.log(data)
                 $("#alertMessage").removeClass("alert-warning")
                 $("#alertMessage").addClass("alert-success")
                 $("#alertMessage").removeClass("d-none")
@@ -66,7 +68,7 @@ $("#loginButton").click(() => {
             }
             else {
                 $("#alertMessage").removeClass("d-none")
-                $("#alertMessage").text(data.data.error)
+                $("#alertMessage").text(data.error)
                 setTimeout(() => {
                     $("#alertMessage").addClass("d-none")
                 }, 3500)

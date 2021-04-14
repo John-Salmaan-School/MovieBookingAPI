@@ -36,12 +36,19 @@ def submit(args):
 @orm.db_session
 def remove(args):
     result = {"error": None}
+    auth = authenticate(request.headers.get("Authentication"))
+    booking = BookingService.get_booking(args["id"])
 
-    if BookingService.get_booking(args["id"]):
-        BookingService.remove(bid=args["id"])
+    if auth[0]:
+        user = auth[1]
+
+        if booking in user.bookings:
+            BookingService.remove(bid=args["id"])
+        else:
+            result["error"] = "Booking doesn't exist under your account"
 
     else:
-        result["error"] = "Booking does not exists under that ID"
+        result["error"] = auth[1]
 
     return result
 
@@ -58,7 +65,7 @@ def update(args):
 
         if booking in user.bookings:
             BookingService.update(
-                bid=args["id"], show=args["show"], date=args["date"],
+                bid=args["id"], user=user, show=args["show"], date=args["date"],
                 adult_num=args["adult_tickets"], child_num=args["child_tickets"],
                 discount=args["discount"], cost=args["cost"]
             )
@@ -95,19 +102,29 @@ def list():
 @blueprint.route("/get/<string:bid>", methods=["GET"])
 @orm.db_session
 def get(bid):
-    result = {"data": {}}
-
+    result = {"data": {}, "error": None}
+    auth = authenticate(request.headers.get("Authentication"))
     booking = BookingService.get_booking(bid)
-    result["data"] = {
-        "id": booking.bid,
-        "name": booking.user.name,
-        "show": booking.show,
-        "date": booking.date,
-        "adult": booking.adult_num,
-        "child": booking.child_num,
-        "discount": booking.discount,
-        "cost": booking.cost
-    }
 
-    return result
+    if auth[0]:
+        user = auth[1]
 
+        if booking in user.bookings:
+            result["data"] = {
+                "id": booking.bid,
+                "name": booking.user.name,
+                "show": booking.show,
+                "date": booking.date,
+                "adult": booking.adult_num,
+                "child": booking.child_num,
+                "discount": booking.discount,
+                "cost": booking.cost
+            }
+
+            return result
+        else:
+            result["error"] = "Booking doesn't exist under account"
+            return result
+    else:
+        result["error"] = auth[1]
+        return result

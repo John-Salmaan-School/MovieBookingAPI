@@ -1,6 +1,11 @@
 var api_url = window.location.hostname
 var canChange = false
 
+var err_messages = {
+    "invalid-date": "Date can't be older than today :)",
+    "not-logged-in": "You are not logged in. Please log in before updating",
+}
+
 window.onload = () => {
     Promise.resolve($.ajax({
     "url": "http://" + api_url + ":1234/profile/info",
@@ -39,13 +44,26 @@ $("#logoutButton").click(() => {
 })
 
 $("#idInput").change(() => {
+
+    if (!getCookie('auth')) {
+        $("#alertMessage").text(err_messages['not-logged-in'])
+        $("#alertMessage").removeClass("d-none")
+        setTimeout(() => {
+            $("#alertMessage").addClass("d-none")
+        }, 3500)
+        return
+    }
+
     Promise.resolve($.ajax({
         "url": "http://" + api_url + ":1234/booking/get/" + $("#idInput").val(),
+        "headers": {
+            "Authentication": getCookie("auth")
+        },
         "method": "GET"
     })).then((data) => {
-        if (data.data.length == 0) {
+        if (data.error) {
             $("#alertMessage").removeClass("d-none")
-            $("#alertMessage").text("Booking does not exist under that ID")
+            $("#alertMessage").text(data.error)
             setTimeout(() => {
                 $("#alertMessage").addClass("d-none")
             }, 3500)
@@ -105,6 +123,15 @@ $("#idInput").change(() => {
 })
 
 $("#updateButton").click(() => {
+    if (!getCookie('auth')) {
+        $("#alertMessage").text(err_messages['not-logged-in'])
+        $("#alertMessage").removeClass("d-none")
+        setTimeout(() => {
+            $("#alertMessage").addClass("d-none")
+        }, 3500)
+        return
+    }
+
     calculate()
 
     var id = $("#idInput").val()
@@ -113,6 +140,7 @@ $("#updateButton").click(() => {
     var date = $("#datePick").val()
     var cost = $("#invoiceAmount").val()
     var discount
+
 
     // Sequence to check which radio button is checked and what discount to append.
     if ($("#super").is(":checked")) {
@@ -137,20 +165,32 @@ $("#updateButton").click(() => {
             "url": "http://" + api_url + ":1234/booking/update",
             "method": "POST",
             "headers": {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                "Authentication": getCookie("auth")
             },
             "data":
             "{\"id\": \"" + id + "\", \"show\": \"" + show + "\",\"date\": \"" + date + "\",\"adult_tickets\": \"" + adultTicket + "\",\"child_tickets\": \"" + childTicket + "\",\"discount\": \"" + discount + "\",\"cost\": \"" + cost + "\"}"
         })).then((data) => {
-            $("#alertMessage").removeClass("alert-warning")
-            $("#alertMessage").addClass("alert-success")
-            $("#alertMessage").removeClass("d-none")
-            $("#alertMessage").text("Booking updated successfully")
-            setTimeout(() => {
-                $("#alertMessage").removeClass("alert-success")
-                $("#alertMessage").addClass("alert-warning")
-                $("#alertMessage").addClass("d-none")
-            }, 3500)
+            if (!data.error) {
+                $("#alertMessage").removeClass("alert-warning")
+                $("#alertMessage").addClass("alert-success")
+                $("#alertMessage").removeClass("d-none")
+                $("#alertMessage").text("Booking updated successfully")
+                setTimeout(() => {
+                    $("#alertMessage").removeClass("alert-success")
+                    $("#alertMessage").addClass("alert-warning")
+                    $("#alertMessage").addClass("d-none")
+                }, 3500)
+            }
+            else {
+                $("#alertMessage").text(data.error)
+                $("#alertMessage").removeClass("d-none")
+                setTimeout(() => {
+                    $("#alertMessage").addClass("d-none")
+                }, 3500)
+                return
+            }
+
         })
     }
     else {

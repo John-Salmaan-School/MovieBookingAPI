@@ -6,7 +6,7 @@ Programmer: Salmaan Nagoormira
 
 var api_url = window.location.hostname
 // When the website is loading, a function is called
-window.onload = function() {
+window.onload = () => {
 
     // The current date is pulled and is sliced to give the format dd/mm/yyyy
     var date = getCurrentDate()

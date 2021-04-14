@@ -1,18 +1,11 @@
-from flask import Flask, render_template, request
-from werkzeug.utils import secure_filename
-from .utils import allowed_file
-from path import Path
-import platform
-import os
+from flask import Flask, render_template
+from .services import UserService
+from .auth.utils import hashpwd
+from pony import orm
+
 
 def init_app():
     app = Flask(__name__)
-
-    allowed_ext = ["png"]
-    path = "moviebookingapi/static/img" if platform.system().lower() == "linux" else "moviebookingapi\\static\\img"
-    upload_folder = os.path.abspath(path)
-
-    app.config["UPLOAD_FOLDER"] = upload_folder
 
     @app.route("/")
     def index():
@@ -34,41 +27,32 @@ def init_app():
     def login():
         return render_template("login.html")
 
-    @app.route("/upload", methods=["POST", "GET"])
-    def upload():
-        if request.method == "POST":
-            result = {"error": None}
-            if 'file' not in request.files:
-                result["error"] = "No file parameter in request"
-                return result
-
-            file = request.files['file']
-            name = request.form["filename"]
-
-            if file.filename == "":
-                result["error"] = "No selected file"
-                return result
-
-            if file and allowed_file(filename=file.filename, ext_list=allowed_ext):
-                filename = secure_filename(name + ".png")
-                path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-                file.save(path)
-                return result
-            else:
-                result["error"] = "File format is incorrect"
-                return result
-
-        return render_template("upload.html")
-
     with app.app_context():
         from .booking import booking
         from .profile import profile
         from .view import view
         from .auth import auth
+        from .file import file
 
         app.register_blueprint(booking)
         app.register_blueprint(view)
         app.register_blueprint(auth)
         app.register_blueprint(profile)
+        app.register_blueprint(file)
 
         return app
+
+
+@orm.db_session
+def init_db():
+    if not UserService.get_by_email(email="salmaan@salmaan.com"):
+        UserService.create(
+            name="Salmaan", email="salmaan@salmaan.com", password=hashpwd("salmaan1234"),
+            phone_num="123456789", admin=True, manager=False
+        )
+
+    if not UserService.get_by_email("nagoormira@nagoormira.com"):
+        UserService.create(
+            name="Nagoormira", email="nagoormira@nagoormira.com", password=hashpwd("nagoormira1234"),
+            phone_num="123456789", admin=False, manager=True
+        )

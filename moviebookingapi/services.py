@@ -20,10 +20,11 @@ class BookingService(object):
         Booking.get(bid=bid).delete()
 
     @classmethod
-    def update(cls, bid, show, date,
+    def update(cls, bid, user, show, date,
                adult_num, child_num,
                discount, cost):
-        for booking in Booking.select(lambda x: x.bid == bid):
+
+        for booking in user.bookings.select(lambda x: x.bid == bid):
             booking.show = show if booking.show != show else booking.show
             booking.date = date if booking.date != date else booking.date
             booking.adult_num = adult_num if booking.adult_num != adult_num else booking.adult_num
@@ -38,10 +39,6 @@ class BookingService(object):
     @classmethod
     def get_booking(cls, bid):
         return Booking.get(bid=bid)
-
-    @classmethod
-    def get_booking_by_name(cls, name):
-        return Booking.get(name=name)
 
 # This service is used to manage users, such as creating
 # listing and getting users.
