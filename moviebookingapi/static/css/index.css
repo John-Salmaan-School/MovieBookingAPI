@@ -2,3 +2,16 @@
 .custom-select {
     width: fit-content;
 }
+
+nav form button {
+    margin: 10px;
+}
+
+h2 {
+    margin: 10px;
+}
+
+#userInfo {
+    float: right;
+    color: #ffffff;
+}

@@ -24,15 +24,32 @@ window.onload = function() {
     })).then((data) => {
         if (!data.error) {
             $("#formButtons").addClass("d-none")
-            $("#userInfo").removeClass("d-none")
+            $("#userButtons").removeClass("d-none")
             $("#userInfo").text(data.data.name)
         }
         else {
             $("#formButtons").removeClass("d-none")
-            $("#userInfo").addClass("d-none")
+            $("#userButtons").addClass("d-none")
         }
     })
 }
+
+$("#logoutButton").click(() => {
+    document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 GMT"
+
+    if (!getCookie("auth")) {
+        $("#alertMessage").removeClass("alert-warning")
+        $("#alertMessage").addClass("alert-success")
+        $("#alertMessage").removeClass("d-none")
+        $("#alertMessage").text("You have logged out successfully")
+        setTimeout(() => {
+            $("#alertMessage").removeClass("alert-success")
+            $("#alertMessage").addClass("alert-warning")
+            $("#alertMessage").addClass("d-none")
+            window.location.replace("/")
+        }, 3500)
+    }
+})
 
 // A variable defined for error messages
 var err_messages = {

@@ -50,16 +50,23 @@ def remove(args):
 @orm.db_session
 def update(args):
     result = {"error": None}
+    auth = authenticate(request.headers.get("Authentication"))
+    booking = BookingService.get_booking(args["id"])
 
-    if BookingService.get_booking(args["id"]):
-        BookingService.update(
-            bid=args["id"], show=args["show"], date=args["date"],
-            adult_num=args["adult_tickets"], child_num=args["child_tickets"],
-            discount=args["discount"], cost=args["cost"]
-        )
+    if auth[0]:
+        user = auth[1]
+
+        if booking in user.bookings:
+            BookingService.update(
+                bid=args["id"], show=args["show"], date=args["date"],
+                adult_num=args["adult_tickets"], child_num=args["child_tickets"],
+                discount=args["discount"], cost=args["cost"]
+            )
+        else:
+            result["error"] = "Booking doesn't exist under your account"
 
     else:
-        result["error"] = "Booking does not exist under that ID"
+        result["error"] = auth[1]
 
     return result
 

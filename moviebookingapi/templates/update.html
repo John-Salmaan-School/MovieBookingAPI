@@ -21,6 +21,17 @@
 </style>
 </head>
 <body>
+  <nav class="navbar navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand mb-0 h1" href="/">Village Cinemas</a>
+    <form class="form-inline" id="formButtons">
+      <a href="/login"><button class="btn btn-outline-primary" type="button">Login</button></a>
+      <a href="/register"><button class="btn btn-outline-success" type="button">Register</button></a>
+    </form>
+    <form class="form-inline d-none" id="userButtons">
+      <span class="nav-item nav-link" id="userInfo"></span>
+      <button class="btn btn-outline-danger" id="logoutButton" type="button">Logout</button>
+    </form>
+  </nav>
   <div class="container text-center">
     <h2>
       Village Cinemas
