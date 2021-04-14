@@ -6,11 +6,11 @@ from .models import Booking, User
 # booking.
 class BookingService(object):
     @classmethod
-    def create(cls, bid, name, show, date,
+    def create(cls, bid, user, show, date,
                adult_num, child_num,
                discount, cost):
         Booking(
-            bid=bid, name=name, show=show, date=date,
+            bid=bid, user=user, show=show, date=date,
             adult_num=adult_num, child_num=child_num,
             discount=discount, cost=cost
         )

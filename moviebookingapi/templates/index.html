@@ -6,21 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Latest compiled JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
-<style>
-  .custom-select {
-    width: fit-content;
-  }
-</style>
 </head>
-<body>
+<body data-theme="dark">
+  <nav class="navbar navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand mb-0 h1" href="/">Village Cinemas</a>
+    <form class="form-inline" id="formButtons">
+      <a href="/login"><button class="btn btn-outline-primary" type="button">Login</button></a>
+      <a href="/register"><button class="btn btn-outline-success" type="button">Register</button></a>
+    </form>
+    <span class="nav-item nav-link" id="userInfo"></span>
+  </nav>
   <div class="container text-center">
     <h2>
       Village Cinemas
@@ -31,12 +33,6 @@
     <div class="card">
       <div class="card-body">
         <form>
-          <div class="form-group row">
-            <label for="nameInput" class="col-2 col-form-label">Name</label>
-            <div class="col-10">
-              <input class="form-control" type="text" id="nameInput">
-            </div>
-          </div>
           <div class="form-group row">
             <label for="showSelect" class="col-2 col-form-label">Select Show</label>
             <div class="col-1">
@@ -103,7 +99,6 @@
           <div class="container text-center">
             <button class="btn btn-success" type="button" id="calculateButton">Calculate</button>
             <button class="btn btn-outline-danger" type="button" id="clearButton">Clear</button>
-            <button class="btn btn-outline-primary" type="button" id="saveButton">Save</button>
             <button class="btn btn-outline-secondary" type="button" id="submitButton">Submit</button>
           </div>
           <br>

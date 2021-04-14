@@ -1,8 +1,6 @@
 from webargs import fields
-from werkzeug.utils import secure_filename
 
 submit_args = {
-    "name": fields.Str(required=True),
     "show": fields.Str(required=True),
     "date": fields.Str(required=True),
     "adult_tickets": fields.Str(required=True),
@@ -16,7 +14,6 @@ remove_args = {
 
 update_args = {
     "id": fields.Str(required=True),
-    "name": fields.Str(required=True),
     "show": fields.Str(required=True),
     "date": fields.Str(required=True),
     "adult_tickets": fields.Str(required=True),

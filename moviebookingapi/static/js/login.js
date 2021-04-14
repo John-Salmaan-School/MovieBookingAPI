@@ -56,9 +56,12 @@ $("#loginButton").click(() => {
                     $("#alertMessage").removeClass("alert-success")
                     $("#alertMessage").addClass("alert-warning")
                     $("#alertMessage").addClass("d-none")
-                }, 3500)
+                }, 1500)
                 var expire = new Date(data.data.expire * 1000)
                 document.cookie = `auth=${data.data.token};expires=${expire};path=/`
+                setTimeout(() => {
+                    window.location.replace("/")
+                }, 2000)
                 
             }
             else {

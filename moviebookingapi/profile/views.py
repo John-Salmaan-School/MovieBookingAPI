@@ -6,13 +6,14 @@ blueprint = Blueprint("profile", __name__, url_prefix="/profile/")
 @blueprint.route("/info", methods=["GET"])
 def info():
     result = {"data": {}, "error": None}
-    user = authenticate(request)
+    auth = authenticate(request.headers.get("Authentication"))
 
-    if user[0]:
+    if auth[0]:
+        user = auth[1]
         result["data"] = {
-            "name": user[1].name
+            "name": user.name
         }
         return result
     else:
-        result["error"] = user[1]
+        result["error"] = auth[1]
         return result

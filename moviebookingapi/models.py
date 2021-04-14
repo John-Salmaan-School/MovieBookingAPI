@@ -13,7 +13,7 @@ class Booking(db.Entity):
     _table_ = "bookings"
 
     bid = orm.Required(str)
-    name = orm.Required(str)
+    user = orm.Required("User")
     show = orm.Required(str)
     date = orm.Required(str)
     adult_num = orm.Required(str)
@@ -30,6 +30,7 @@ class User(db.Entity):
     email = orm.Required(str)
     password = orm.Required(str)
     phone = orm.Required(str)
+    bookings = orm.Set("Booking")
     manager = orm.Optional(bool)
     admin = orm.Optional(bool)
 

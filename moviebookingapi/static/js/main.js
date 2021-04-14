@@ -22,14 +22,22 @@ window.onload = function() {
         },
         "method": "GET"
     })).then((data) => {
-        console.log(data)
+        if (!data.error) {
+            $("#formButtons").addClass("d-none")
+            $("#userInfo").removeClass("d-none")
+            $("#userInfo").text(data.data.name)
+        }
+        else {
+            $("#formButtons").removeClass("d-none")
+            $("#userInfo").addClass("d-none")
+        }
     })
 }
 
 // A variable defined for error messages
 var err_messages = {
     "invalid-date": "Date can't be older than today :)",
-    "no-name": "No name enterd. Please enter name before saving",
+    "not-logged-in": "You are not logged in. Please log in before submitting",
 }
 
 // From https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
@@ -126,76 +134,19 @@ $("#clearButton").click(() => {
     $("#invoiceAmount").val("")
 })
 
-/* 
-Here an invocation of the click event listener is initiated. When the save button is clicked
-data is saved into a csv file.
-*/
-
-$("#saveButton").click(() => {
-
-    /* 
-    Here there is a comparison if the name input is empty or not. If it is, then don't continue
-    */
-    if ($("#nameInput").val() == "") {
-        $("#alertMessage").text(err_messages['no-name'])
-        $("#alertMessage").removeClass("d-none")
-        // Then a timeout is set to remove the error message
-        setTimeout(() => {
-            $("#alertMessage").addClass("d-none")
-        }, 3500)
-
-        return
-    }
-
-    var discount
-
-    // Sequence to check which radio button is checked and what discount to append.
-    if ($("#super").is(":checked")) {
-        discount = "Super Tuesday"
-    }
-    else if ($("#manitee").is(":checked")) {
-        discount = "Manitee Discount"
-    }
-    else if ($("#concession").is(":checked")) {
-        discount = "Concession Discount"
-    }
-    // By default, the default discount will remain 0.0
-    else {
-        discount = "None"
-    }
-
-    var adultTicket = $("#adultTicketInput").val() == "" ? "0" : $("#adultTicketInput").val()
-    var childTicket = $("#childTicketInput").val() == "" ? "0" : $("#childTicketInput").val()
-
-    var data = "Name" + "," + $("#nameInput").val() + "," + "Show" + 
-    "," + $("#showSelect option:selected").text() + "," + "Date" + 
-    "," + $("#datePick").val() + "," + "Adult" + "," + adultTicket + 
-    "," + "Child" + "," + childTicket + "," + "Discount" + "," 
-    + discount
-
-    var file = new Blob([data], {type: "text/plain"})
-    // Here the saveAs function is being used in the external FileSaver.min.js file
-    saveAs(file, "MovieBooking.csv")
-})
-
 $("#submitButton").click(() => {
 
     $("#calculateButton").click()
-    /* 
-    Here there is a comparison if the name input is empty or not. If it is, then don't continue
-    */
-    if ($("#nameInput").val() == "") {
-        $("#alertMessage").text(err_messages['no-name'])
+
+    if (!getCookie('auth')) {
+        $("#alertMessage").text(err_messages['not-logged-in'])
         $("#alertMessage").removeClass("d-none")
-        // Then a timeout is set to remove the error message
         setTimeout(() => {
             $("#alertMessage").addClass("d-none")
         }, 3500)
-
         return
     }
 
-    var name = $("#nameInput").val()
     var show = $("#showSelect option:selected").text()
     var date = $("#datePick").val()
     var cost = $("#invoiceAmount").val()
@@ -223,10 +174,11 @@ $("#submitButton").click(() => {
         "url": "http://" + api_url +":1234/booking/submit",
         "method": "POST",
         "headers": {
-          "content-type": "application/json"
+            "Authentication": getCookie("auth"),
+            "content-type": "application/json"
         },
         "data":
-        "{\"name\": \"" + name + "\", \"show\": \"" + show + "\",\"date\": \"" + date + "\",\"adult_tickets\": \"" + adultTicket + "\",\"child_tickets\": \"" + childTicket + "\",\"discount\": \"" + discount + "\",\"cost\": \"" + cost + "\"}"
+        "{\"show\": \"" + show + "\",\"date\": \"" + date + "\",\"adult_tickets\": \"" + adultTicket + "\",\"child_tickets\": \"" + childTicket + "\",\"discount\": \"" + discount + "\",\"cost\": \"" + cost + "\"}"
     })).then((data) => {
         if (!data.error) {
             $("#alertMessage").removeClass("alert-warning")

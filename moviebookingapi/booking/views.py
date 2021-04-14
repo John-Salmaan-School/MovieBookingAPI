@@ -1,8 +1,9 @@
 from .args import submit_args, remove_args, update_args
 from webargs.flaskparser import use_args
 from ..services import BookingService
+from flask import Blueprint, request
 from .utils import gen_booking_id
-from flask import Blueprint
+from ..token import authenticate
 from pony import orm
 
 blueprint = Blueprint("booking", __name__, url_prefix="/booking/")
@@ -12,23 +13,23 @@ blueprint = Blueprint("booking", __name__, url_prefix="/booking/")
 @orm.db_session
 def submit(args):
     result = {"id": "", "error": None}
+    auth = authenticate(request.headers.get("Authentication"))
 
-    if not BookingService.get_booking_by_name(args["name"]):
+    if auth[0]:
+        user = auth[1]
 
         bid = gen_booking_id()
         BookingService.create(
-            bid=bid, name=args["name"], show=args["show"],
+            bid=bid, user=user, show=args["show"],
             date=args["date"], adult_num=args["adult_tickets"],
             child_num=args["child_tickets"], discount=args["discount"],
             cost=args["cost"]
         )
-
         result["id"] = bid
-
+        return result
     else:
-        result["error"] = "Booking already exists under that name"
-
-    return result
+        result["error"] = auth[1]
+        return result
 
 @blueprint.route("/remove", methods=["POST"])
 @use_args(remove_args, location="json")
@@ -64,13 +65,14 @@ def update(args):
 
 @blueprint.route("/list", methods=["GET"])
 @orm.db_session
+# TODO: Auth Only for manager
 def list():
     result = {"data": []}
 
     for booking in BookingService.list_bookings():
         booking_detail = {
             "id": booking.bid,
-            "name": booking.name,
+            "name": booking.user.name,
             "show": booking.show,
             "date": booking.date,
             "adult": booking.adult_num,
@@ -91,7 +93,7 @@ def get(bid):
     booking = BookingService.get_booking(bid)
     result["data"] = {
         "id": booking.bid,
-        "name": booking.name,
+        "name": booking.user.name,
         "show": booking.show,
         "date": booking.date,
         "adult": booking.adult_num,

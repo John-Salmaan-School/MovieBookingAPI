@@ -57,8 +57,7 @@ class Token(object):
 # https://github.com/hkkio/hikka/blob/master/hikka/decorators.py
 
 @orm.db_session
-def authenticate(r: request):
-    token = r.headers.get("Authentication")
+def authenticate(token: str):
 
     valid = Token.verify(token=token)
     payload = Token.payload(token=token)
