@@ -12,9 +12,14 @@ v0.2: Add register route and view user route (https://github.com/John-Salmaan-Sc
 v0.2.1: Begin adding internal documentation to python files. Updated files (https://github.com/John-Salmaan-School/MovieBookingAPI/commit/68c1817962ab30346c7f45555dccd6f002cedbd3)
 v0.2.2: Update Readme.MD
 Added register functionality and view user route. Milestone reached, move to 0.3
-v0.3: Add login functionality. Moved some routes. Added upload functionality
+v0.3: Add login functionality. Moved some routes. Added upload functionality (https://github.com/John-Salmaan-School/MovieBookingAPI/commit/74eb5584787c2305b8fd9f05bd1f2f9a83bc7f37)
+v0.3.1: Linked login with booking. Now bookings are made under a users account (https://github.com/John-Salmaan-School/MovieBookingAPI/commit/8cea301e64db24492318d3d716359d537f7f19d2)
 
 # TODO:
-- Link login with booking. Removing booking undername and moving to booking under an account
-- Update file upload view. Move to specific folder and make new route
+- Add logout functionality.
 - Make view booking page specific for user. Allows user to view the bookings they have made (using cards and Jinja2)
+- Make view to see all bookings avaliable. Only manager view this
+- Make view to see all registered users. Only Admin can view this
+- Update file upload view. Move to specific folder and make new route
+- Make manager panel. Manager should be able to view all bookings and add new shows.
+- Make admin panel. Admin should be able to view system status and registered users.
