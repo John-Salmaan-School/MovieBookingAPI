@@ -28,3 +28,7 @@ v0.4
 - Make view to see all registered users. Only Admin can view this
 - Make manager panel. Manager should be able to view all bookings and add new shows.
 - Make admin panel. Admin should be able to view system status and registered users.
+
+v0.5
+- Add search algorithm. Search for users (admin) and bookings (manager).
+- Add sort algorithm. Sort users based on name, sort bookings based on show name.
