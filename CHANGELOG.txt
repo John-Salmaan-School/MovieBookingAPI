@@ -14,7 +14,7 @@ v0.2.2: Update Readme.MD
 Added register functionality and view user route. Milestone reached, move to 0.3
 v0.3: Add login functionality. Moved some routes. Added upload functionality (https://github.com/John-Salmaan-School/MovieBookingAPI/commit/74eb5584787c2305b8fd9f05bd1f2f9a83bc7f37)
 v0.3.1: Linked login with booking. Now bookings are made under a users account (https://github.com/John-Salmaan-School/MovieBookingAPI/commit/8cea301e64db24492318d3d716359d537f7f19d2)
-v0.3.2: Add logout functionality
+v0.3.2: Add logout functionality (https://github.com/John-Salmaan-School/MovieBookingAPI/commit/b12f2e7ca29a6dd5e86dc84ed3c976ef2fc854cc)
 
 # TODO:
 v0.3
