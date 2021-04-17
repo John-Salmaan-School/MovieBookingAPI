@@ -26,21 +26,16 @@
   </form>
 </nav>
 <body>
-  <div class="container text-center">
-    <h2 id="title">Your Bookings: </h2>
-    <br>
-    <div id="alertMessage" class="alert alert-warning d-none" role="alert"></div>
-  </div>
-  {% for booking in bookings %}
+  <div id="alertMessage" class="alert alert-warning d-none" role="alert"></div>
+  {% for user in users %}
   <div class="card">
-    <img class="card-img-top" src="{{url_for('static', filename='img/' + booking.show + '.png')}}"/>
     <div class="card-body">
-      <h5 class="card-title">{{booking.user.name}}</h5>
+      <h5 class="card-title">{{user.name}}</h5>
       <p class="card-text">
-        <a href="/view/booking/{{booking.bid}}">{{booking.bid}}</a><br>
-        {{booking.adult_num}}<br>
-        {{booking.child_num}}<br>
-        {{booking.cost}}
+        Email: {{user.email}}<br>
+        Phone No.: {{user.phone}}<br>
+        Administrator: {{user.admin}}<br>
+        Manager: {{user.manager}}
       </p>
     </div>
   </div>

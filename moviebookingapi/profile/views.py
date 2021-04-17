@@ -11,7 +11,9 @@ def info():
     if auth[0]:
         user = auth[1]
         result["data"] = {
-            "name": user.name
+            "name": user.name,
+            "admin": user.admin,
+            "manager": user.manager
         }
         return result
     else:

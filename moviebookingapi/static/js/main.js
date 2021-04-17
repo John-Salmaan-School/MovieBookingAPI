@@ -35,7 +35,7 @@ window.onload = () => {
 }
 
 $("#logoutButton").click(() => {
-    document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 GMT"
+    document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/"
 
     if (!getCookie("auth")) {
         $("#alertMessage").removeClass("alert-warning")

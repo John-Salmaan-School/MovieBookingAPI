@@ -19,7 +19,6 @@ $("#registerButton").click(function() {
         "short-password": "The password you entered is too short.",
         "email-no-match": "The emails entered do not match",
         "password-no-match": "The passwords entered do not match",
-        "username-invalid": "You haven't entered a username or the username is too short"
     }
 
     if (email == "" && password == "" && confEmail == "" && username == "") {
