@@ -57,18 +57,6 @@ class UserService(object):
 
     @classmethod
     def list_users(cls):
-        result = {"data": []}
-        for user in User.select():
-            user_detail = {
-                "name": user.name,
-                "email": user.email,
-                "phone": user.phone,
-                "admin": user.admin,
-                "manager": user.manager
-            }
-
-            result["data"].append(user_detail)
-
-        return result
+        return User.select()
 
 
