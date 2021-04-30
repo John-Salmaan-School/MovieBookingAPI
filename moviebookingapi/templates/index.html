@@ -40,11 +40,6 @@
             <label for="showSelect" class="col-2 col-form-label">Select Show</label>
             <div class="col-1">
               <select class="custom-select" id="showSelect">
-                <option value="default" selected>Shrek</option>
-                <option>Andwele</option>
-                <option>Lachlan</option>
-                <option>Something here</option>
-                <option>3 Idiots</option>
               </select>
             </div>
           </div>
@@ -58,13 +53,13 @@
           <h6>Tickets</h6>
           <br>
           <div class="form-group row">
-            <label for="adultTicketInput" class="col-2 col-form-label">Adult Tickets (@$12)</label>
+            <label for="adultTicketInput" class="col-2 col-form-label">Adult Tickets (@$<span id="cost_adult"></span>)</label>
             <div class="col-10">
               <input class="form-control" type="number" id="adultTicketInput" placeholder="1" min="1">
             </div>
           </div>
           <div class="form-group row">
-            <label for="childTicketInput" class="col-2 col-form-label">Child Tickets (@$8)</label>
+            <label for="childTicketInput" class="col-2 col-form-label">Child Tickets (@$<span id="cost_child"></span>)</label>
             <div class="col-10">
               <input class="form-control" type="number" id="childTicketInput" placeholder="0" min="0">
             </div>

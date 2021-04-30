@@ -15,23 +15,79 @@ window.onload = () => {
     // Then the date is set into the date picker input
     $("#datePick").val(date)
 
-    Promise.resolve($.ajax({
-        "url": "http://" + api_url + ":1234/profile/info",
-        "headers": {
-            "Authentication": getCookie("auth"),
-        },
-        "method": "GET"
-    })).then((data) => {
-        if (!data.error) {
+    var promises = [
+        info(),
+        list(),
+    ]
+
+    init = Promise.all(promises).then((promise) => {
+        info = promise[0]
+        list = promise[1]
+
+        if (!info.error) {
             $("#formButtons").addClass("d-none")
             $("#userButtons").removeClass("d-none")
-            $("#userInfo").text(data.data.name)
+            $("#userInfo").text(info.data.name)
         }
         else {
             $("#formButtons").removeClass("d-none")
             $("#userButtons").addClass("d-none")
         }
+
+        for (var i = 0; i < list.shows.length; i++) {
+            if (i == 0) {
+                $("#showSelect")
+                .append($("<option></option>")
+                .attr("value", "default")
+                .text(list.shows[i])
+                .prop('selected', true))
+            }
+            else {
+                 $("#showSelect")
+                .append($("<option></option>")
+                .attr("value", i)
+                .text(list.shows[i]))
+            }
+
+        }
     })
+
+    init.then(() => {
+        show_name = $("#showSelect option:selected").text()
+        Promise.resolve($.ajax({
+            "url": "http://" + api_url + ":1234/show/get/" + show_name,
+            "headers": {
+                "Authentication": getCookie('auth')
+            },
+            "method": "GET"
+        })).then((data) => {
+            if (!data.error) {
+                $("#cost_child").text(data.data.cost_child)
+                $("#cost_adult").text(data.data.cost_adult)
+            }
+        })
+    })
+}
+
+async function info() {
+    const data = Promise.resolve($.ajax({
+        "url": "http://" + api_url + ":1234/profile/info",
+        "headers": {
+            "Authentication": getCookie("auth"),
+        },
+        "method": "GET"
+    }))
+
+    return data
+}
+
+async function list() {
+    const data = Promise.resolve($.ajax({
+        "url": "http://" + api_url + ":1234/show/list",
+        "method": "GET"
+    }))
+
+    return data
 }
 
 $("#logoutButton").click(() => {
@@ -92,8 +148,8 @@ a sequence is initiated.
 */
 $("#calculateButton").click(() => {
     // Defining constant variables
-    var adultPrice = 12
-    var childPrice = 8
+    var adultPrice = parseInt($("#cost_adult").text())
+    var childPrice = parseInt($("#cost_child").text())
     var defaultDiscount = 0.0
 
     /* 
@@ -125,6 +181,23 @@ $("#calculateButton").click(() => {
     // Then the invoice amount is set into the input, which is read only
     $("#invoiceAmount").val(`$${invoiceAmount}`)
 
+})
+
+$("#showSelect").change(() => {
+    show_name = $("#showSelect option:selected").text()
+
+    Promise.resolve($.ajax({
+        "url": "http://" + api_url + ":1234/show/get/" + show_name,
+        "headers": {
+            "Authentication": getCookie('auth')
+        },
+        "method": "GET"
+    })).then((data) => {
+        if (!data.error) {
+            $("#cost_child").text(data.data.cost_child)
+            $("#cost_adult").text(data.data.cost_adult)
+        }
+    })
 })
 
 /* 

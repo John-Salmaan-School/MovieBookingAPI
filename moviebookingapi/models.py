@@ -34,6 +34,14 @@ class User(db.Entity):
     manager = orm.Optional(bool)
     admin = orm.Optional(bool)
 
+class Show(db.Entity):
+    _table_ = "shows"
+
+    name = orm.Required(str)
+    cost_child = orm.Required(int)
+    cost_adult = orm.Required(int)
+    count = orm.Required(int)
+    image = orm.Optional(str)
 
 # Once the objects have been defined, a method is invoked
 # to generate the schema while also creating all the needed

@@ -24,6 +24,18 @@ window.onload = () => {
             $("#userButtons").addClass("d-none")
         }
     })
+
+        Promise.resolve($.ajax({
+        "url": "http://" + api_url + ":1234/show/list",
+        "method": "GET"
+    })).then((data) => {
+        for (var i = 0; i < data.shows.length; i++) {
+             $("#showSelect")
+            .append($("<option></option>")
+            .attr("value", data.shows[i])
+            .text(data.shows[i]))
+        }
+    })
 }
 
 $("#logoutButton").click(() => {

@@ -17,7 +17,7 @@ class Token(object):
     # Creates a JWT used for authentication that expires
     # after 2 days
     def create(cls, action, data, expire=None, secret=None):
-        time_diff = expire if expire else timedelta(minutes=5)
+        time_diff = expire if expire else timedelta(hours=2)
         token_exp = int(datetime.timestamp(datetime.utcnow() + time_diff))
         token_key = secret if secret else config.secret
 

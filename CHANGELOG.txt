@@ -19,12 +19,11 @@ v0.3.3: Update file upload view. Move to specific folder and make new route (htt
 v0.3.4: Update /update route and /remove route. Minor changes needed. Move updating under account and removing under account (https://github.com/John-Salmaan-School/MovieBookingAPI/commit/a026c374c6d81c72cbb943e26078eba9c802c7d0)
 Added login functionality, logout functionality and moved to using accounts. Milestone reached, move to 0.4
 v0.4: Added view for viewing bookings, both for manager and specific user. Added viewing users for admin (https://github.com/John-Salmaan-School/MovieBookingAPI/commit/2963baca69261e019fe1e3a8b42e09f9f6a6b131)
-
+v0.4.1: Make manager panel. Manager should be able to view all bookings and add new shows, edit shows and remove shows.
 
 # TODO:
 v0.4
-- Make manager panel. Manager should be able to view all bookings and add new shows.
-- Make admin panel. Admin should be able to view system status and registered users.
+- Make admin panel. Admin should be able to view system status and error logs.
 
 v0.5
 - Add search algorithm. Search for users (admin) and bookings (manager).

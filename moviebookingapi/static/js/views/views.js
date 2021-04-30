@@ -12,10 +12,6 @@ window.onload = () => {
             $("#formButtons").addClass("d-none")
             $("#userButtons").removeClass("d-none")
             $("#userInfo").text(data.data.name)
-
-            if (data.data.manager) {
-                $("#title").text("All Bookings: ")
-            }
         }
         else {
             $("#formButtons").removeClass("d-none")
